@@ -31,25 +31,21 @@
     <style>
         body { background-color: #020205; }
         
-        /* Custom Racing Dashboard Style Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #020205; }
         ::-webkit-scrollbar-thumb { background: #FF0B2B; border-radius: 4px; }
         
-        /* Technical CAD grid pattern representing Wind Tunnel flow lines */
         .tech-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(255, 11, 43, 0.03) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(255, 11, 43, 0.03) 1px, transparent 1px);
         }
         
-        /* Depth gradients for prototype car illumination */
         .hero-gradient { 
             background: radial-gradient(circle at 80% 50%, rgba(255, 11, 43, 0.12) 0%, transparent 60%),
                         radial-gradient(circle at 20% 80%, rgba(10, 11, 16, 1) 0%, #020205 100%); 
         }
         
-        /* F1 Scuderia-inspired Card structure */
         .f1-card { 
             background: linear-gradient(145deg, rgba(14, 16, 24, 0.9) 0%, rgba(6, 7, 12, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -63,7 +59,6 @@
             box-shadow: 0 30px 60px rgba(255, 11, 43, 0.08);
         }
         
-        /* Smooth Entrance Reveal Animation */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -76,13 +71,14 @@
     <nav class="fixed w-full z-50 px-4 sm:px-6 py-4 bg-onmec-dark/70 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="LOGO-TEAM.png" alt="ONMEC Racing Team Logo" class="h-8 sm:h-9 object-contain">
-                <span class="text-xl sm:text-2xl font-black italic tracking-tighter text-white">ONMEC<span class="text-onmec-red">RACING</span></span>
+                <img src="LOGO-TEAM.png" alt="ONMEC Racing Team Logo" class="h-8 sm:h-9 object-contain select-none" draggable="false">
+                <span class="text-xl sm:text-2xl font-black italic tracking-tighter text-white select-none">ONMEC<span class="text-onmec-red">RACING</span></span>
             </div>
             <ul class="hidden lg:flex space-x-6 xl:space-x-8 text-[11px] font-semibold uppercase tracking-widest text-zinc-400">
                 <li><a href="#hero" class="hover:text-white transition duration-300">Home</a></li>
+                <li><a href="#cars" class="hover:text-white transition duration-300 text-onmec-red">Vehicle Lineup</a></li>
                 <li><a href="#awards" class="hover:text-white transition duration-300">Awards</a></li>
-                <li><a href="#divise" class="hover:text-white transition duration-300">Team Kit</a></li>
+                <li><a href="#divise" class="hover:text-white transition duration-300">Team Apparel</a></li>
                 <li><a href="#technical-specs" class="hover:text-white transition duration-300">Specifications</a></li>
                 <li><a href="#heritage" class="hover:text-white transition duration-300">Institute</a></li>
                 <li><a href="#team" class="hover:text-white transition duration-300">Team</a></li>
@@ -94,41 +90,98 @@
     <section id="hero" class="relative min-h-screen flex items-center hero-gradient px-6 pt-24 overflow-hidden">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-6 space-y-6 reveal text-center md:text-left z-10">
-                <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wider text-zinc-300">
+                <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wider text-zinc-300 select-none">
                     <span class="w-2 h-2 rounded-full bg-onmec-red animate-pulse"></span> STEM Racing Project • ITT Jannuzzi
                 </div>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-white">
-                    FROM ENGINEERING <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-onmec-red to-red-400 italic">TO REAL PERFORMANCE</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-white select-none">
+                    ENGINEERING <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-onmec-red to-red-400 italic">PRECISION PERFORMANCE</span>
                 </h1>
                 <p class="text-zinc-400 text-base sm:text-lg max-w-xl font-light leading-relaxed">
-                    ONMEC Racing converts theoretical concepts, advanced design, and CAD modeling into high-performance scale CO₂ formula cars.
+                    ONMEC Racing translates theoretical expertise, advanced computational design, and precision manufacturing into high-performance scale CO₂ racing vehicles.
                 </p>
                 <div class="pt-4">
-                    <a href="#technical-specs" class="group inline-flex items-center gap-3 bg-onmec-red hover:bg-red-600 text-white px-8 py-4 font-bold rounded-lg transition-all duration-300 shadow-lg shadow-onmec-red/20 uppercase text-sm tracking-wider">
-                        Explore the Project 
+                    <a href="#cars" class="group inline-flex items-center gap-3 bg-onmec-red hover:bg-red-600 text-white px-8 py-4 font-bold rounded-lg transition-all duration-300 shadow-lg shadow-onmec-red/20 uppercase text-sm tracking-wider">
+                        Explore Our Lineup 
                         <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                     </a>
                 </div>
             </div>
             <div class="md:col-span-6 relative flex justify-center items-center reveal" style="animation-delay: 0.2s;">
                 <div class="absolute w-[80%] h-[80%] bg-onmec-red/10 rounded-full blur-[120px] pointer-events-none"></div>
-                <img src="MODELLINO-MACCHINA.png" alt="ONMEC Racing Prototype" class="w-full max-w-lg md:max-w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] transform hover:scale-105 hover:-rotate-1 transition duration-700 ease-out z-10">
+                <img src="MODELLINO-MACCHINA.png" alt="ONMEC Racing Prototype" class="w-full max-w-lg md:max-w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-10 select-none" draggable="false">
             </div>
         </div>
     </section>
 
-    <section id="technical-specs" class="py-20 px-6 relative">
+    <section id="cars" class="py-24 px-6 relative bg-zinc-950/30 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center mb-20 select-none">
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Vehicle Engineering</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">R&D Development</h2>
+                <p class="text-zinc-400 text-base max-w-2xl text-center mt-4 font-light">Showcasing the technical evolution of ONMEC Racing. From drag-optimized qualifying configurations to race-tuned regional championship platforms.</p>
+            </div>
+
+            <div class="flex flex-col gap-16 max-w-6xl mx-auto">
+                
+                <div class="f1-card p-8 sm:p-10 rounded-2xl flex flex-col lg:flex-row gap-10 group">
+                    <div class="lg:w-1/3 flex flex-col justify-center select-none">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="inline-block px-3 py-1.5 rounded bg-onmec-red text-white text-[11px] font-bold uppercase tracking-widest">QUALIFYING SETUP</span>
+                            <span class="text-zinc-600 font-mono text-sm">CONFIG_01</span>
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-black uppercase text-white mb-4 group-hover:text-onmec-red transition-colors">Qualifying Chassis</h3>
+                        <p class="text-zinc-400 text-base font-light leading-relaxed mb-6">Engineered for peak performance and minimum aerodynamic drag. Optimized specifically for short-burst velocity and maximum straight-line efficiency.</p>
+                    </div>
+                    
+                    <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-zinc-950/70 rounded-xl p-2 border border-white/5 overflow-hidden flex flex-col md:col-span-2 relative">
+                            <img src="RENDER_1.png" alt="Qualifiche Track Environment" class="w-full h-64 md:h-80 object-cover object-center rounded-lg transition duration-700 select-none" draggable="false">
+                            <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded text-[10px] font-mono text-zinc-300 uppercase tracking-widest select-none pointer-events-none">Track Telemetry</div>
+                        </div>
+                        <div class="bg-zinc-950/70 rounded-xl p-2 border border-white/5 overflow-hidden flex flex-col relative">
+                            <img src="RENDER_2.png" alt="Qualifiche Off-Road Environment" class="w-full h-48 sm:h-56 object-cover object-center rounded-lg transition duration-700 select-none" draggable="false">
+                            <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded text-[10px] font-mono text-zinc-300 uppercase tracking-widest select-none pointer-events-none">Surface Simulation</div>
+                        </div>
+                        <div class="bg-zinc-950/70 rounded-xl p-2 border border-white/5 overflow-hidden flex flex-col relative">
+                            <img src="RENDER_3.png" alt="Qualifiche Desert Environment" class="w-full h-48 sm:h-56 object-cover object-center rounded-lg transition duration-700 select-none" draggable="false">
+                            <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded text-[10px] font-mono text-zinc-300 uppercase tracking-widest select-none pointer-events-none">Velocity Testing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="f1-card p-8 sm:p-10 rounded-2xl flex flex-col lg:flex-row-reverse gap-10 group">
+                    <div class="lg:w-1/3 flex flex-col justify-center select-none">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="inline-block px-3 py-1.5 rounded bg-zinc-800 text-zinc-300 text-[11px] font-bold uppercase tracking-widest">RACE FINALS SETUP</span>
+                            <span class="text-zinc-600 font-mono text-sm">CONFIG_02</span>
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-black uppercase text-white mb-4 group-hover:text-onmec-red transition-colors">Regional Finals Platform</h3>
+                        <p class="text-zinc-400 text-base font-light leading-relaxed mb-6">The regional championship-winning prototype. Features balanced aerodynamic downforce and structural rigidity for superior race-day stability.</p>
+                    </div>
+                    
+                    <div class="lg:w-2/3 bg-zinc-950/50 rounded-xl p-8 border border-white/[0.02] flex items-center justify-center min-h-[350px] sm:min-h-[450px] relative overflow-hidden group/img">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,11,43,0.08),transparent_70%)] opacity-0 group-hover/img:opacity-100 transition-opacity duration-700"></div>
+                        <img src="MODELLINO-MACCHINA.png" alt="Macchina Regionali Prototipo" class="max-h-64 sm:max-h-80 w-auto object-contain transition duration-700 drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] relative z-10 select-none" draggable="false">
+                        <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded text-[10px] font-mono text-zinc-300 uppercase tracking-widest z-10 select-none pointer-events-none">Prototype Analysis</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-specs" class="py-20 px-6 relative select-none">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col items-center mb-16">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Telemetry & Construction</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Technical Specifications</h2>
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Technical Specifications</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Engineering Data</h2>
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
                 <div class="f1-card p-5 sm:p-8 rounded-xl relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-1 h-0 bg-onmec-red group-hover:h-full transition-all duration-300"></div>
                     <span class="text-zinc-600 font-mono text-[10px] sm:text-xs block mb-4">SPEC_01</span>
                     <span class="text-white font-black text-3xl sm:text-5xl block mb-2 tracking-tight group-hover:text-onmec-red transition-colors">48g</span>
-                    <span class="text-[10px] sm:text-[11px] uppercase text-zinc-400 font-semibold tracking-wider">Exact Weight</span>
+                    <span class="text-[10px] sm:text-[11px] uppercase text-zinc-400 font-semibold tracking-wider">Dry Mass</span>
                 </div>
                 <div class="f1-card p-5 sm:p-8 rounded-xl relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-1 h-0 bg-onmec-red group-hover:h-full transition-all duration-300"></div>
@@ -152,30 +205,30 @@
                     <div class="absolute top-0 left-0 w-1 h-0 bg-onmec-red group-hover:h-full transition-all duration-300"></div>
                     <span class="text-zinc-600 font-mono text-[10px] sm:text-xs block mb-4">SPEC_05</span>
                     <span class="text-white font-black text-3xl sm:text-5xl block mb-2 tracking-tight group-hover:text-onmec-red transition-colors">CAD</span>
-                    <span class="text-[10px] sm:text-[11px] uppercase text-zinc-400 font-semibold tracking-wider">Design</span>
+                    <span class="text-[10px] sm:text-[11px] uppercase text-zinc-400 font-semibold tracking-wider">Environment</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="awards" class="py-20 px-6 bg-zinc-950/20 border-y border-white/5 relative">
+    <section id="awards" class="py-20 px-6 bg-zinc-950/20 border-y border-white/5 relative select-none">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col items-center mb-16">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Track Record & Wins</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Awards 2026</h2>
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Achievements</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Honors 2026</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
                 <div class="f1-card p-6 sm:p-8 rounded-xl relative overflow-hidden group bg-gradient-to-br from-onmec-red/[0.02] to-transparent">
-                    <div class="absolute top-0 right-0 p-4 text-6xl sm:text-7xl font-black text-white/[0.02] select-none tracking-tighter group-hover:text-onmec-red/[0.04] transition-colors">01</div>
+                    <div class="absolute top-0 right-0 p-4 text-6xl sm:text-7xl font-black text-white/[0.02] tracking-tighter group-hover:text-onmec-red/[0.04] transition-colors">01</div>
                     <span class="inline-block px-2 py-1 rounded bg-onmec-red text-white text-[10px] font-bold uppercase tracking-widest mb-4">CHAMPION</span>
                     <h3 class="text-lg sm:text-xl font-bold uppercase text-white mb-2 group-hover:text-onmec-red transition-colors">South Regional Championship 2026</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed font-light">STEM Racing Italy competition held in Bari on May 15-16, 2026.</p>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light">STEM Racing Italy - Bari Division, May 2026.</p>
                 </div>
                 <div class="f1-card p-6 sm:p-8 rounded-xl relative overflow-hidden group bg-gradient-to-br from-onmec-red/[0.02] to-transparent">
-                    <div class="absolute top-0 right-0 p-4 text-6xl sm:text-7xl font-black text-white/[0.02] select-none tracking-tighter group-hover:text-onmec-red/[0.04] transition-colors">02</div>
+                    <div class="absolute top-0 right-0 p-4 text-6xl sm:text-7xl font-black text-white/[0.02] tracking-tighter group-hover:text-onmec-red/[0.04] transition-colors">02</div>
                     <span class="inline-block px-2 py-1 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-widest mb-4">RECORD</span>
-                    <h3 class="text-lg sm:text-xl font-bold uppercase text-white mb-2 group-hover:text-onmec-red transition-colors">Fastest Car Award</h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed font-light">Official STEM Racing Italy 2025-2026 recognition awarded in collaboration with Innovation Farm.</p>
+                    <h3 class="text-lg sm:text-xl font-bold uppercase text-white mb-2 group-hover:text-onmec-red transition-colors">Fastest Velocity Award</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light">Official STEM Racing Italy and Innovation Farm recognition.</p>
                 </div>
             </div>
         </div>
@@ -183,17 +236,17 @@
 
     <section id="divise" class="py-20 px-6 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col items-center mb-16">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Race Kit Apparel</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Official Uniforms</h2>
+            <div class="flex flex-col items-center mb-16 select-none">
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Team Identity</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Official Apparel</h2>
             </div>
             
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div class="f1-card p-4 sm:p-6 rounded-xl flex flex-col justify-between items-center group text-center">
                     <div class="w-full bg-zinc-950/50 rounded-lg p-4 mb-4 border border-white/[0.02] flex items-center justify-center min-h-[220px]">
-                        <img src="MAGLIA-FRONTE-TEAM.png" alt="Official Team Jersey - Front" class="max-h-48 w-auto object-contain transform group-hover:scale-105 transition duration-500">
+                        <img src="MAGLIA-FRONTE-TEAM.png" alt="Official Team Jersey - Front" class="max-h-48 w-auto object-contain transition duration-500 select-none pointer-events-none" draggable="false">
                     </div>
-                    <div>
+                    <div class="select-none">
                         <h3 class="text-sm sm:text-base font-bold uppercase tracking-wide text-white">Team Kit</h3>
                         <span class="text-[10px] font-mono text-onmec-red uppercase tracking-widest block mt-1">Front</span>
                     </div>
@@ -201,9 +254,9 @@
 
                 <div class="f1-card p-4 sm:p-6 rounded-xl flex flex-col justify-between items-center group text-center">
                     <div class="w-full bg-zinc-950/50 rounded-lg p-4 mb-4 border border-white/[0.02] flex items-center justify-center min-h-[220px]">
-                        <img src="MAGLIA-RETRO-TEAM.png" alt="Official Team Jersey - Back" class="max-h-48 w-auto object-contain transform group-hover:scale-105 transition duration-500">
+                        <img src="MAGLIA-RETRO-TEAM.png" alt="Official Team Jersey - Back" class="max-h-48 w-auto object-contain transition duration-500 select-none pointer-events-none" draggable="false">
                     </div>
-                    <div>
+                    <div class="select-none">
                         <h3 class="text-sm sm:text-base font-bold uppercase tracking-wide text-white">Team Kit</h3>
                         <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mt-1">Back</span>
                     </div>
@@ -211,9 +264,9 @@
 
                 <div class="f1-card p-4 sm:p-6 rounded-xl flex flex-col justify-between items-center group text-center border-dashed">
                     <div class="w-full bg-zinc-950/50 rounded-lg p-4 mb-4 border border-white/[0.02] flex items-center justify-center min-h-[220px]">
-                        <img src="MAGLIA-FRONTE-STAFF.png" alt="Official Staff Jersey - Front" class="max-h-48 w-auto object-contain transform group-hover:scale-105 transition duration-500">
+                        <img src="MAGLIA-FRONTE-STAFF.png" alt="Official Staff Jersey - Front" class="max-h-48 w-auto object-contain transition duration-500 select-none pointer-events-none" draggable="false">
                     </div>
-                    <div>
+                    <div class="select-none">
                         <h3 class="text-sm sm:text-base font-bold uppercase tracking-wide text-white">Staff Kit</h3>
                         <span class="text-[10px] font-mono text-onmec-red uppercase tracking-widest block mt-1">Front</span>
                     </div>
@@ -221,9 +274,9 @@
 
                 <div class="f1-card p-4 sm:p-6 rounded-xl flex flex-col justify-between items-center group text-center border-dashed">
                     <div class="w-full bg-zinc-950/50 rounded-lg p-4 mb-4 border border-white/[0.02] flex items-center justify-center min-h-[220px]">
-                        <img src="MAGLIA-RETRO-STAFF.png" alt="Official Staff Jersey - Back" class="max-h-48 w-auto object-contain transform group-hover:scale-105 transition duration-500">
+                        <img src="MAGLIA-RETRO-STAFF.png" alt="Official Staff Jersey - Back" class="max-h-48 w-auto object-contain transition duration-500 select-none pointer-events-none" draggable="false">
                     </div>
-                    <div>
+                    <div class="select-none">
                         <h3 class="text-sm sm:text-base font-bold uppercase tracking-wide text-white">Staff Kit</h3>
                         <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mt-1">Back</span>
                     </div>
@@ -236,27 +289,27 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-5 order-2 md:order-1">
                 <div class="bg-gradient-to-b from-white to-zinc-100 p-10 sm:p-12 rounded-2xl shadow-2xl shadow-black/80 text-center group relative overflow-hidden border border-white/20">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-zinc-200/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src="LOGO-SCUOLA.png" alt="ITT Jannuzzi Logo" class="h-36 sm:h-44 w-auto object-contain mx-auto transition duration-500 group-hover:scale-105 mb-8 relative z-10">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-zinc-200/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    <img src="LOGO-SCUOLA.png" alt="ITT Jannuzzi Logo" class="h-36 sm:h-44 w-auto object-contain mx-auto transition duration-500 mb-8 relative z-10 select-none pointer-events-none" draggable="false">
                     <a href="https://ittjannuzzi.edu.it/" target="_blank" class="relative z-10 inline-flex items-center gap-2 bg-onmec-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-onmec-red transition-all duration-300 uppercase text-xs tracking-wider">
-                        Visit Website <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        Official Website <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                 </div>
             </div>
-            <div class="md:col-span-7 space-y-4 order-1 md:order-2 text-center md:text-left">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest block">// HQ & Heritage</span>
+            <div class="md:col-span-7 space-y-4 order-1 md:order-2 text-center md:text-left select-none">
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest block">// HQ & Academic Heritage</span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight">ITT "Sen. O. Jannuzzi" <span class="text-transparent bg-clip-text bg-gradient-to-r from-onmec-red to-red-400 italic font-light">Andria</span></h2>
                 <div class="w-12 h-1 bg-onmec-red my-4 mx-auto md:mx-0"></div>
-                <p class="text-zinc-400 text-base sm:text-lg leading-relaxed font-light">Founded in 1958, our institute stands at the core of technical and industrial education in Puglia. The ONMEC Racing team serves as its flagship engineering division.</p>
+                <p class="text-zinc-400 text-base sm:text-lg leading-relaxed font-light">Founded in 1958, our institute is a cornerstone of technical and industrial education in the Puglia region. ONMEC Racing represents the school's premier innovation and research division.</p>
             </div>
         </div>
     </section>
 
-    <section id="team" class="py-20 px-6 border-t border-white/5 relative">
+    <section id="team" class="py-20 px-6 border-t border-white/5 relative select-none">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col items-center mb-16">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Our Team Structure</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Our Team</h2>
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest mb-2">// Operational Structure</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Team Composition</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div class="f1-card p-6 rounded-xl relative overflow-hidden group border-l-2 border-l-onmec-red">
@@ -326,7 +379,7 @@
                         </div>
                         <div>
                             <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">ID_06 / MEDIA</span>
-                            <h3 class="text-base sm:text-lg font-black uppercase text-white tracking-tight group-hover:text-onmec-red transition-colors">Social Media Manager</h3>
+                            <h3 class="text-base sm:text-lg font-black uppercase text-white tracking-tight group-hover:text-onmec-red transition-colors">Communications Manager</h3>
                         </div>
                     </div>
                 </div>
@@ -336,89 +389,84 @@
 
     <section id="partners" class="py-20 px-6 bg-zinc-950/40 border-t border-white/5">
         <div class="max-w-7xl mx-auto text-center">
-            <div class="mb-16">
-                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest block mb-2">// Network & Support</span>
+            <div class="mb-16 select-none">
+                <span class="text-onmec-red font-bold text-xs uppercase tracking-widest block mb-2">// Network & Strategic Partners</span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight text-center">Powered By</h2>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="CREA3D.png" alt="Crea3D Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="CREA3D.png" alt="Crea3D Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://www.crea3d.com" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://www.crea3d.com" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
                 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="CAMPANILE-SERVICE.png" alt="Campanile Service Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="CAMPANILE-SERVICE.png" alt="Campanile Service Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4">Technical Partner</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4 select-none">Technical Partner</span>
                 </div>
                 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="LISI-MARMI.png" alt="Lisi Marmi Partner Logo" class="h-14 sm:h-16 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="LISI-MARMI.png" alt="Lisi Marmi Partner Logo" class="h-14 sm:h-16 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4">Technical Partner</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4 select-none">Technical Partner</span>
                 </div>
                 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="SEMATECH.png" alt="Sematech Partner Logo" class="h-12 sm:h-14 w-auto scale-[3] sm:scale-[4.2] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-[4.3]">
+                        <img src="SEMATECH.png" alt="Sematech Partner Logo" class="h-12 sm:h-14 w-auto scale-[3] sm:scale-[4.2] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://www.sematech.it/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://www.sematech.it/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
                 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="OMP.png" alt="OMP Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="OMP.png" alt="OMP Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://www.ompsrl.com/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://www.ompsrl.com/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
                 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="TECNOSWITCH.png" alt="Tecnoswitch Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="TECNOSWITCH.png" alt="Tecnoswitch Partner Logo" class="h-12 sm:h-14 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://www.tecnoswitch.com" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://www.tecnoswitch.com" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="TESSE.png" alt="Tesse Partner Logo" class="h-12 sm:h-14 w-auto scale-[5.8] sm:scale-[7.5] object-contain filter brightness-110 group-hover:brightness-125 transition duration-300 group-hover:scale-[7.6]">
+                        <img src="TESSE.png" alt="Tesse Partner Logo" class="h-12 sm:h-14 w-auto scale-[5.8] sm:scale-[7.5] object-contain filter brightness-110 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4">Technical Partner</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4 select-none">Technical Partner</span>
                 </div>
 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="MASTRORILLI.png" alt="Mastrorilli Partner Logo" class="h-14 sm:h-16 w-auto max-w-[90%] object-contain filter brightness-90 group-hover:brightness-100 transition duration-300 group-hover:scale-105">
+                        <img src="MASTRORILLI.png" alt="Mastrorilli Partner Logo" class="h-14 sm:h-16 w-auto max-w-[90%] object-contain filter brightness-90 transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4">Technical Partner</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-600 mt-4 select-none">Technical Partner</span>
                 </div>
 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="DIBENEDETTO.png" alt="Di Benedetto Partner Logo" class="h-16 sm:h-20 w-auto max-w-[95%] object-contain filter brightness-95 group-hover:brightness-100 transition duration-300 group-hover:scale-105 rounded">
+                        <img src="DIBENEDETTO.png" alt="Di Benedetto Partner Logo" class="h-16 sm:h-20 w-auto max-w-[95%] object-contain filter brightness-95 transition duration-300 rounded select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://www.dibenedettosas.it/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://www.dibenedettosas.it/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
 
                 <div class="f1-card p-6 rounded-xl flex flex-col justify-between items-center group min-h-[180px]">
                     <div class="w-full h-24 flex items-center justify-center">
-                        <img src="GRAF_SYNERGY.png" alt="Graf Synergy Partner Logo" class="h-16 sm:h-20 w-auto max-w-[95%] object-contain transition duration-300 group-hover:scale-105">
+                        <img src="GRAF_SYNERGY.png" alt="Graf Synergy Partner Logo" class="h-16 sm:h-20 w-auto max-w-[95%] object-contain transition duration-300 select-none pointer-events-none" draggable="false">
                     </div>
-                    <a href="https://grafsynergy.com/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Website &rarr;</a>
+                    <a href="https://grafsynergy.com/" target="_blank" class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-onmec-red flex items-center gap-1 mt-4 transition-colors">Visit Official Site &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="py-12 border-t border-white/5 text-center bg-[#010103]">
-        <img src="LOGO-TEAM.png" alt="ONMEC Logo" class="h-10 mx-auto mb-4 opacity-20">
-        <p class="text-[9px] uppercase tracking-[0.6em] font-semibold text-zinc-600">&copy; 2026 ONMEC Racing Team – Engineering & Innovation</p>
-    </footer>
 
 </body>
 </html>
